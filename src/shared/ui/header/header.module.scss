@@ -1,0 +1,92 @@
+.container{
+    width: 100%;
+    background: rgba(28, 32, 51, 0.73);
+    display: flex;
+    justify-content: space-around;
+    height: 200px;
+    align-items: center;
+    position: absolute;
+    color: #FAF9F4;
+}
+
+.cart {
+    width: 150px;
+}
+
+.navbar {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    border-radius: 10px;
+    border: 4px solid var(--accent-orange, #FF9D57);
+    box-shadow: 0px 0px 20px 0px #EE5353;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 63px;
+    width: 250px;
+}
+
+.logoName {
+    font-size: 32px;
+    color: #FF9D57;
+}
+
+.navigation {
+    margin-top: 50px;
+    display: flex;
+    font-size: 20px;
+}
+
+.home {
+    margin-right: 60px;
+}
+
+.about {
+    margin-right: 60px;
+    min-width: 52px;
+}
+
+.promotion {
+    margin-right: 60px;
+}
+
+.cartIcon {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    border: none;
+    background-color: #FFF5E8;
+}
+
+.cartStatus {
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: #FF9D57;
+    position: relative;
+    top: -70px; 
+    left: 50px;
+}
+
+@media (max-width: 800px) {
+    .contactInformation {
+        display: none;
+    }
+    .navigation {
+        display: none;
+    }
+    .cart {
+        display: none;
+    }
+
+    .container {
+        justify-content: space-between;
+        padding-left: 20px;
+    }
+  }

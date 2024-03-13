@@ -1,0 +1,30 @@
+.container {
+    height: 220px;
+    background-color: #1C2033;
+    color: #FAF9F4;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttons button {
+    width: 65px;
+    height: 65px;
+    border-radius: 100px;
+    background-color: #FAF9F4;
+    border: none;
+    cursor: pointer;
+}
+
+.instagram {
+    margin-right: 30px;
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10%;
+    }
+  }

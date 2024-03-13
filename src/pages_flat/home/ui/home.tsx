@@ -1,10 +1,21 @@
-import { cn } from "@/shared/lib/classNames";
-import styles from "./home.module.scss";
+import { Firstblock } from "../../../shared/ui/firstblock/firstblock";
+import { Footer } from "../../../shared/ui/footer/footer";
+import { Menu } from "../../../features/menu/menu";
+import { Promo } from "../../../shared/ui/promo/promo";
 
 const Home = () => {
-    const classNames = cn(styles.container);
+  return (
+    <div className="container">
+      <Firstblock></Firstblock>
+      <Menu></Menu>
+      <Promo></Promo>
+      <Footer></Footer>
+    </div>
+  );
+};
 
-    return <div className={classNames}>Home Page</div>
-}
+export { Home };
 
-export {Home}
+// 300-800
+// 800-1200
+// 1200+
