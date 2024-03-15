@@ -1,4 +1,4 @@
 import { Home } from "@/pages_flat/home";
-import { Header } from "@/pages_flat/header";
+import { About } from "@/pages_flat/about";
 
-export default Home;
+export default About;
