@@ -17,19 +17,21 @@ const Card: FC<CardProps> = (props): JSX.Element => {
     styles.pizzaImage,
     !props.ispizza && styles.bottleImage
   );
+  const descriptionClasses = cn(
+    styles.description,
+    !props.ispizza && styles.nonDescription
+  );
   return (
     <div className={styles.container}>
-      <div className={styles.photo}>
-        <Image
-          className={imageClasses}
-          src={`/photo/${props.photo}`}
-          width={props.ispizza ? 410 : 120}
-          height={props.ispizza ? 410 : 338}
-          alt="pizza photo"
-        />
-      </div>
+      <Image
+        className={imageClasses}
+        src={`/photo/${props.photo}`}
+        width={props.ispizza ? 410 : 120}
+        height={props.ispizza ? 410 : 338}
+        alt="pizza photo"
+      />
       <div className={styles.title}>{props.title}</div>
-      <div className={styles.description}>{props.description}</div>
+      <div className={descriptionClasses}>{props.description}</div>
       <div className={styles.options}>
         <div className={styles.size}>{props.size}</div>
         <div className={styles.price}>{props.price} руб</div>

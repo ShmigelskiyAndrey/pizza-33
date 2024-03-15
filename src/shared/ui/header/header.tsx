@@ -15,6 +15,7 @@ const Header = () => {
           <div className={styles.logoIcon}>
             {" "}
             <Image
+              className={styles.logoImage}
               src="/icons/logoicon.svg"
               width={34}
               height={37}
@@ -40,6 +41,19 @@ const Header = () => {
           />
         </button>
         <div className={styles.cartStatus}></div>
+      </div>
+
+      <div className={styles.burgerMenu}>
+        <button className={styles.burgerButton}>
+          {" "}
+          <Image
+            className={styles.burgerIcon}
+            src="/icons/burgermenuicon.svg"
+            width={60}
+            height={59}
+            alt="cart icon"
+          />
+        </button>
       </div>
     </div>
   );
