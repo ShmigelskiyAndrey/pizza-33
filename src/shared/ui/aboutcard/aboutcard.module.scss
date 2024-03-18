@@ -1,0 +1,27 @@
+.container {
+    width: 835px;
+    height: 228px;
+    background-color: #FFF5E8;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.number {
+    font-size: 64px;
+    margin-right: 20px;
+    color: #FF9D57;
+}
+
+.text {
+    font-size: 24px;
+    width: 690px;
+    color: #1A1009;
+}
+
+.title {
+    margin-bottom: 20px;
+}
