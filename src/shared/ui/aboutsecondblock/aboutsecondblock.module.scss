@@ -1,8 +1,8 @@
 .container {
-    height: 120vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-left: 100px;
+    padding-left: 5%;
     padding-top: 50px;
     background-color: #FAF9F4;
 }
@@ -22,8 +22,35 @@
     color: #FAF9F4;
     border-radius: 10px;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .cards > *:nth-child(2n){
-    margin-left: 300px;
+    margin-left: 250px;
+}
+
+@media (max-width: 1200px) {
+    .cards > *:nth-child(2n){
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container {
+        padding-left: 0;
+        align-items: center;
+    }
+    .title {
+        font-size: 36px;
+    }
+    .button {
+        font-size: 24px;
+        width: 280px;
+        height: 60px;
+    }
 }

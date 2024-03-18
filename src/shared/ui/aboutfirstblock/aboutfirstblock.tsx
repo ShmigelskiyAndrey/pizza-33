@@ -5,7 +5,7 @@ import { Header } from "../header/header";
 const Aboutfirstblock = () => {
   return (
     <>
-      <Header></Header>
+      <Header ismainpage={false}></Header>
       <div className={styles.container}>
         <div className={styles.text}>
           <div className={styles.title}>О нас</div>

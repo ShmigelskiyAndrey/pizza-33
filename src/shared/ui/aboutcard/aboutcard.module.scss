@@ -1,12 +1,13 @@
 .container {
-    width: 835px;
-    height: 228px;
+    max-width: 835px;
+    height: 208px;
     background-color: #FFF5E8;
     display: flex;
     justify-content: center;
     padding-top: 20px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 20px;
+    margin-right: 2%;
     border-radius: 20px;
 }
 
@@ -18,10 +19,25 @@
 
 .text {
     font-size: 24px;
-    width: 690px;
+    max-width: 690px;
     color: #1A1009;
 }
 
 .title {
     margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+    .text {
+        font-size: 16px;
+    }
+    .container {
+        width: 90%;
+    }
+    .number {
+        margin-left: 2%;
+    }
+    .text {
+        margin-right: 2%;
+    }
 }
