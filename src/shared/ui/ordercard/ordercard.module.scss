@@ -1,0 +1,82 @@
+.container {
+    width: 680px;
+    height: 240px;
+    background-color: #FFF5E8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 4px 4px 20px  rgba(53, 53, 53, 0.25);
+    margin-bottom: 50px;
+}
+
+.name {
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.description {
+    max-width: 300px;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+}
+
+.counter button {
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: 1px solid #C6C6C6;
+    cursor: pointer;
+}
+
+.total {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.characteristic {
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sizechar {
+    display: flex;
+}
+
+.sizecircle {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: #FF9D57;
+    margin-right: 15px;
+}
+
+.size {
+    font-size: 18px;
+}
+
+.price {
+    font-size: 20px;
+}
+
+.close {
+    height: 100%;
+}
+
+.closebtn {
+    border: none;
+    background: none;
+    font-size: 40px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg); 
+    -moz-transform: rotate(-45deg); 
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    cursor: pointer;
+}
