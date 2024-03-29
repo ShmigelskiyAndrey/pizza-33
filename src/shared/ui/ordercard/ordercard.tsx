@@ -32,7 +32,15 @@ const Ordercard = () => {
           <div className={styles.price}>500 руб</div>
         </div>
         <div className={styles.close}>
-          <button className={styles.closebtn}>+</button>
+          <button className={styles.closebtn}>
+            <Image
+              className={styles.closeicon}
+              src="/icons/closebutton.svg"
+              width={26}
+              height={26}
+              alt="close button"
+            />
+          </button>
         </div>
       </div>
     </>

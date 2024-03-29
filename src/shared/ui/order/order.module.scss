@@ -1,21 +1,24 @@
 .container {
     width: 100%;
-    height: 100vh;
-    margin-top: 50px;
+    min-height: 100vh;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #1A1009;
+    background-color: #FAF9F4;
 }
 
 .text {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: flex-end;
 }
 
 .title {
     font-size: 64px;
+    width: 680px;
 }
 
 .backbtn {
@@ -23,6 +26,9 @@
     border: none;
     background: none;
     cursor: pointer;
+    width: 560px;
+    text-align: end;
+    padding-bottom: 10px;
 }
 
 .content {
@@ -30,4 +36,220 @@
     display: flex;
     justify-content: space-around;
     margin-top: 50px;
+}
+
+.delivery {
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 610px;
+}
+
+.subtitle {
+    font-size: 48px;
+}
+
+.options {
+    display: flex;
+    border: none;
+}
+
+.radiobtn {
+    appearance: none;
+	width: 25px;
+	height: 25px;
+	background-color: #C6C6C6;
+    border-radius: 50%;
+}
+
+.radiobtn:checked {
+    background-color: #FF9D57;
+}
+
+.label {
+    margin-right: 20px;
+    font-size: 24px;
+}
+
+.firstradio {
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.secondradio {
+    display: flex;
+    justify-content: center;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    border: 1px solid #676767;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    max-width: 610px;
+    height: 80px;
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+
+.textarea {
+    border: 1px solid #676767;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    max-width: 610px;
+    height: 130px;
+    margin-bottom: 25px;
+    padding: 20px;
+    resize: none;
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+.input:focus {
+    outline: none;
+  }
+
+.order {
+    display: flex;
+}
+
+.orderbtn {
+    border: none;
+    cursor: pointer;
+    background-color: #FF9D57;
+    color: #FAF9F4;
+    border-radius: 10px;
+    font-size: 32px;
+    width: 320px;
+    height: 70px;
+}
+
+.orderdetails {
+    margin-left: 60px;
+}
+
+.totalprice {
+    font-size: 24px;
+    display: flex;
+}
+
+.totaltitle {
+    margin-right: 5px;
+}
+
+.closeicon {
+    display: none;
+}
+
+@media (max-width: 1400px) {
+    .title {
+        width: auto;
+    }
+
+    .backbtn {
+        width: auto;
+    }
+
+    .text {
+        max-width: 680px;
+        justify-content: space-between;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .backbtn {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 800px) {
+    .text {
+        max-width: 280px;
+
+    }
+    
+    .radiobtn {
+        width: 15px;
+        height: 15px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .closeicon {
+        display: block;
+        position: absolute;
+        right: 50px;
+        top: 50px;
+    }
+
+    .backbtn {
+        display: none;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    .options {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .label {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .input {
+        width: 280px;
+        height: 60px;
+        font-size: 16px;
+    }
+
+    .textarea {
+        width: 280px;
+        margin-bottom: 0;
+        font-size: 16px;
+    }
+
+    .order {
+        flex-direction: column-reverse;
+        padding-bottom: 20px;
+    }
+
+    .orderdetails {
+        margin-left: 0;
+    }
+
+    .orderbtn {
+        max-width: 280px;
+        height: 60px;
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+
+    .firstradio {
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+
+    .totalprice {
+        justify-content: space-between;
+    }
 }
