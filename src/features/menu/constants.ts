@@ -1,5 +1,6 @@
 export const MENU = [
   {
+    category: "pizza",
     ispizza: true,
     title: "С ананасом",
     description:
@@ -10,6 +11,7 @@ export const MENU = [
   },
 
   {
+    category: "pizza",
     ispizza: true,
     title: "С тыквой",
     description:
@@ -20,6 +22,7 @@ export const MENU = [
   },
 
   {
+    category: "pizza",
     ispizza: true,
     title: "С пармской ветчиной",
     description:
@@ -30,6 +33,7 @@ export const MENU = [
   },
 
   {
+    category: "pizza",
     ispizza: true,
     title: "Морская",
     description:
@@ -40,6 +44,7 @@ export const MENU = [
   },
 
   {
+    category: "pizza",
     ispizza: true,
     title: "Пепперони",
     description: "Томатный соус, салями, красный перец чилли, моцарелла",
@@ -49,6 +54,7 @@ export const MENU = [
   },
 
   {
+    category: "pizza",
     ispizza: true,
     title: "4 сыра",
     description:
@@ -59,6 +65,7 @@ export const MENU = [
   },
 
   {
+    category: "drink",
     ispizza: false,
     title: "Лимонад Вишня",
     size: "250 мл",
@@ -67,6 +74,7 @@ export const MENU = [
   },
 
   {
+    category: "drink",
     ispizza: false,
     title: "Лимонад Цитрус/Пихта",
     size: "250 мл",
@@ -75,6 +83,7 @@ export const MENU = [
   },
 
   {
+    category: "drink",
     ispizza: false,
     title: "Лимонад Эстрагон",
     size: "250 мл",
