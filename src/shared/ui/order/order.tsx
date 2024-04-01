@@ -35,6 +35,7 @@ const Order = () => {
                   name="deliverymethod"
                   value="pickup"
                   className={styles.radiobtn}
+                  defaultChecked
                 />
               </div>
               <div className={styles.secondradio}>

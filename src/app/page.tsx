@@ -4,4 +4,4 @@ import { Thankyou } from "@/pages_flat/thankyou";
 import { Productpage } from "@/pages_flat/productpage";
 import { Orderpage } from "@/pages_flat/orderpage";
 
-export default Orderpage;
+export default Home;

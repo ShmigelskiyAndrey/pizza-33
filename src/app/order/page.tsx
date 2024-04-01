@@ -1,12 +1,3 @@
-import Link from "next/link";
+import { Orderpage } from "@/pages_flat/orderpage";
 
-const OrderPage = () => {
-  return (
-    <h1>
-      Order Page
-      <Link href={"/"}>Home</Link>
-    </h1>
-  );
-};
-
-export default OrderPage;
+export default Orderpage;
