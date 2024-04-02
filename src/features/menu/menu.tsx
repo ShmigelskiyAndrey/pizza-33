@@ -8,6 +8,11 @@ import { selectMenuItemsByFilter } from "./model/selectors";
 import { setFilter } from "./model/filterSlice";
 import { Shantell_Sans } from "next/font/google";
 import { cn } from "@/shared/lib/classNames";
+import { TomatoIcon } from "@/shared/ui/icons/TomatoIcon";
+import { CabageIcon } from "@/shared/ui/icons/CabageIcon";
+import { CarrotIcon } from "@/shared/ui/icons/CarrotIcon";
+import { EggplantIcon } from "@/shared/ui/icons/EggplantIcon";
+import { OnionIcon } from "@/shared/ui/icons/OnionIcon";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -47,8 +52,8 @@ const Menu = () => {
 
   return (
     <div className={styles.container}>
-      <button onClick={devideHandler}>asdasda</button>
-      <button onClick={addHendler}>pizdec</button>
+      {/* <button onClick={devideHandler}>asdasda</button>
+      <button onClick={addHendler}>pizdec</button> */}
       <p className={titleClass}>Меню</p>
 
       <div className={styles.navbar}>
@@ -84,6 +89,16 @@ const Menu = () => {
             photo={item.photo}
           />
         ))}
+      </div>
+      <div className={styles.bgIcons}>
+        <OnionIcon className={styles.onion}></OnionIcon>
+        <EggplantIcon className={styles.eggplant}></EggplantIcon>
+        <TomatoIcon className={styles.tomato}></TomatoIcon>
+        <CarrotIcon className={styles.carrot}></CarrotIcon>
+        <CarrotIcon className={styles.carrot2}></CarrotIcon>
+        <CabageIcon className={styles.cabage}></CabageIcon>
+        <TomatoIcon className={styles.tomato2}></TomatoIcon>
+        <OnionIcon className={styles.onion2}></OnionIcon>
       </div>
     </div>
   );

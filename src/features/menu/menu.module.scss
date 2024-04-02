@@ -1,5 +1,6 @@
 .container {
     width: 100%;
+    position: relative;
     background-color: #FAF9F4;
     display: flex;
     flex-direction: column;
@@ -42,6 +43,56 @@
 
 .btn {
     font-family: inherit;
+}
+
+.onion {
+    position: absolute;
+    left: 25%;
+    top: 10px;
+}
+
+.eggplant {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.tomato {
+    position: absolute;
+    right: 10px;
+    top: 180px;
+}
+
+.carrot {
+    position: absolute;
+    left: 30px;
+    top: 32%;
+    rotate: (-45deg);
+}
+
+.carrot2 {
+    position: absolute;
+    left: 100px;
+    top: 32%;
+}
+
+.cabage {
+    position: absolute;
+    left: 65%;
+    top: 35%;
+}
+
+.tomato2 {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.onion2 {
+    position: absolute;
+    left: 100px;
+    bottom: 10px;
+    rotate: (45deg);
 }
 
 @media (max-width: 1600px) {

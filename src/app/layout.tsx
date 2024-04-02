@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-import { Roboto, Shantell_Sans } from "next/font/google";
-import localFont from "next/font/local";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "./storeProvider";
 
-const poetseone = localFont({
-  src: "../../public/fonts/PoetsenOne-Regular.otf",
-});
-
 const roboto = Roboto({
-  weight: "400",
-  subsets: ["latin"],
-});
-
-const shantellSans = Shantell_Sans({
   weight: "400",
   subsets: ["latin"],
 });

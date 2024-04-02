@@ -2,6 +2,8 @@ import styles from "./promo.module.scss";
 import Image from "next/image";
 import { cn } from "@/shared/lib/classNames";
 import localFont from "next/font/local";
+import { EggplantIcon } from "../icons/EggplantIcon";
+import { CarrotIcon } from "../icons/CarrotIcon";
 
 const poetseone = localFont({
   src: "../../../../public/fonts/PoetsenOne-Regular.otf",
@@ -37,6 +39,10 @@ const Promo = () => {
       <div className={styles.secondTextAlt}>
         <p className={styles.title}>Подробнее смотрите</p>
         <button className={styles.button}>здесь</button>
+      </div>
+      <div className={styles.backgroungImages}>
+        <EggplantIcon className={styles.eggplant}></EggplantIcon>
+        <CarrotIcon className={styles.carrot}></CarrotIcon>
       </div>
     </div>
   );
