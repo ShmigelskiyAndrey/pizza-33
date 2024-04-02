@@ -2,16 +2,23 @@ import styles from "./header.module.scss";
 import Image from "next/image";
 import { FC } from "react";
 import { cn } from "@/shared/lib/classNames";
+import localFont from "next/font/local";
 
 interface HeaderProps {
   ismainpage: boolean;
 }
+
+const poetseone = localFont({
+  src: "../../../../public/fonts/PoetsenOne-Regular.otf",
+});
 
 const Header: FC<HeaderProps> = (props): JSX.Element => {
   const containerClasses = cn(
     styles.container,
     !props.ismainpage && styles.notMain
   );
+
+  const logoTextClass = cn(poetseone.className, styles.logoName);
   return (
     <div className={containerClasses}>
       <div className={styles.contactInformation}>
@@ -21,7 +28,7 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
 
       <div className={styles.navbar}>
         <div className={styles.logo}>
-          <div className={styles.logoName}>Pizza 33</div>
+          <div className={logoTextClass}>Pizza 33</div>
           <div className={styles.logoIcon}>
             {" "}
             <Image
@@ -34,10 +41,10 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
           </div>
         </div>
         <div className={styles.navigation}>
-          <div className={styles.home}>главная</div>
-          <div className={styles.about}>о нас</div>
-          <div className={styles.promotion}>акции</div>
-          <div className={styles.contacts}>контакты</div>
+          <div className={styles.home}>ГЛАВНАЯ</div>
+          <div className={styles.about}>О НАС</div>
+          <div className={styles.promotion}>АКЦИИ</div>
+          <div className={styles.contacts}>КОНТАКТЫ</div>
         </div>
       </div>
 

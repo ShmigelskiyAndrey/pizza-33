@@ -1,13 +1,21 @@
 import styles from "./promo.module.scss";
 import Image from "next/image";
+import { cn } from "@/shared/lib/classNames";
+import localFont from "next/font/local";
+
+const poetseone = localFont({
+  src: "../../../../public/fonts/PoetsenOne-Regular.otf",
+});
 
 const Promo = () => {
+  const offerClass = cn(poetseone.className, styles.offer);
+  const sumClass = cn(poetseone.className, styles.sum);
   return (
     <div className={styles.container}>
       <div className={styles.text}>
         <div className={styles.mainText}>
-          <p className={styles.offer}>Получите скидку на первый заказ!</p>
-          <p className={styles.sum}>33%</p>
+          <p className={offerClass}>Получите скидку на первый заказ!</p>
+          <p className={sumClass}>33%</p>
         </div>
 
         <div className={styles.secondText}>

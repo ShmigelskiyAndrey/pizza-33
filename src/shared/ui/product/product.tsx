@@ -1,14 +1,22 @@
 import styles from "./product.module.scss";
 import { Header } from "../header/header";
 import Image from "next/image";
+import { cn } from "@/shared/lib/classNames";
+import { Shantell_Sans } from "next/font/google";
+
+const shantellSans = Shantell_Sans({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const Product = () => {
+  const titleClass = cn(shantellSans.className, styles.title);
   return (
     <>
       <Header ismainpage={false}></Header>
       <div className={styles.container}>
         <div className={styles.product}>
-          <div className={styles.title}>С пармской ветчиной</div>
+          <div className={titleClass}>С пармской ветчиной</div>
           <Image
             className={styles.image}
             src="/photo/pizzaHam.png"

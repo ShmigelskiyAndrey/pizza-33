@@ -1,14 +1,22 @@
 import styles from "./aboutfirstblock.module.scss";
 import Image from "next/image";
 import { Header } from "../header/header";
+import { Shantell_Sans } from "next/font/google";
+import { cn } from "@/shared/lib/classNames";
+
+const shantellSans = Shantell_Sans({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const Aboutfirstblock = () => {
+  const titleClass = cn(shantellSans.className, styles.title);
   return (
     <>
       <Header ismainpage={false}></Header>
       <div className={styles.container}>
         <div className={styles.text}>
-          <div className={styles.title}>О нас</div>
+          <div className={titleClass}>О нас</div>
           <div className={styles.subtitle}>
             Добро пожаловать в уютное пространство настоящего вкуса и истинной
             итальянской гостеприимности! Наша пиццерия — это не просто место,

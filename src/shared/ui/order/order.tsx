@@ -1,13 +1,21 @@
 import styles from "./order.module.scss";
 import { Ordercard } from "../ordercard/ordercard";
 import Image from "next/image";
+import { Shantell_Sans } from "next/font/google";
+import { cn } from "@/shared/lib/classNames";
+
+const shantellSans = Shantell_Sans({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const Order = () => {
+  const titleClass = cn(shantellSans.className, styles.title);
   return (
     <>
       <div className={styles.container}>
         <div className={styles.text}>
-          <div className={styles.title}>Корзина</div>
+          <div className={titleClass}>Корзина</div>
           <button className={styles.backbtn}>Вернуться на главную</button>
           <Image
             className={styles.closeicon}

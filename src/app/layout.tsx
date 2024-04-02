@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto, Shantell_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { StoreProvider } from "./storeProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const poetseone = localFont({
+  src: "../../public/fonts/PoetsenOne-Regular.otf",
+});
+
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const shantellSans = Shantell_Sans({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         {" "}
         <StoreProvider>{children}</StoreProvider>
       </body>

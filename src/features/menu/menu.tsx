@@ -6,8 +6,16 @@ import { useAppDispatch, useAppSelector } from "@/shared/lib/redux";
 import { adder, devide, pizza } from "./model/menuSlice";
 import { selectMenuItemsByFilter } from "./model/selectors";
 import { setFilter } from "./model/filterSlice";
+import { Shantell_Sans } from "next/font/google";
+import { cn } from "@/shared/lib/classNames";
+
+const shantellSans = Shantell_Sans({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const Menu = () => {
+  const titleClass = cn(shantellSans.className, styles.title);
   const data = useAppSelector(selectMenuItemsByFilter);
   const dispatch = useAppDispatch();
 
@@ -41,13 +49,27 @@ const Menu = () => {
     <div className={styles.container}>
       <button onClick={devideHandler}>asdasda</button>
       <button onClick={addHendler}>pizdec</button>
-      <p className={styles.title}>Menu</p>
+      <p className={titleClass}>Меню</p>
 
       <div className={styles.navbar}>
-        <button onClick={() => dispatch(setFilter(""))}>Все товары</button>
-        <button onClick={() => dispatch(setFilter("pizza"))}>Пиццы</button>
-        <button onClick={() => dispatch(setFilter("drink"))}>Напитки</button>
-        <button onClick={() => dispatch(setFilter(""))}>Акции</button>
+        <button onClick={() => dispatch(setFilter(""))} className={styles.btn}>
+          Все товары
+        </button>
+        <button
+          onClick={() => dispatch(setFilter("pizza"))}
+          className={styles.btn}
+        >
+          Пиццы
+        </button>
+        <button
+          onClick={() => dispatch(setFilter("drink"))}
+          className={styles.btn}
+        >
+          Напитки
+        </button>
+        <button onClick={() => dispatch(setFilter(""))} className={styles.btn}>
+          Акции
+        </button>
       </div>
 
       <div className={styles.cards}>

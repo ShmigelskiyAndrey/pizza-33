@@ -40,6 +40,10 @@
     font-size: 64px;
 }
 
+.btn {
+    font-family: inherit;
+}
+
 @media (max-width: 1600px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
