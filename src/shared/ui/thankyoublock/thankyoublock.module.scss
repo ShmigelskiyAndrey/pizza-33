@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: space-around;
     padding-top: 100px;
+    position: relative;
 }
 
 .title {
@@ -31,13 +32,29 @@
     width: 440px;
     height: 90px;
     font-family: inherit;
+    z-index: 1;
 }
 
 .secondButton {
     display: none;
 }
 
+.imagediv {
+    z-index: 1;
+}
+
+.cabage {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
 @media (max-width: 1400px) {
+    .cabage {
+        top: auto;
+        bottom: 40px;
+    }
+
     .container {
         flex-direction: column;
     }
@@ -62,6 +79,12 @@
 }
 
 @media (max-width: 800px) {
+    .cabage {
+        width: 80px;
+        height: auto;
+        bottom: 150px;
+    }
+
     .container {
         padding-top: 50px;
     }

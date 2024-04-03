@@ -60,6 +60,7 @@
     width: 505px;
     height: 696px;
     border-radius: 20px;
+    margin-right: 50px;
     z-index: 1;
 }
 
@@ -88,7 +89,21 @@
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 950px) {
+    .eggplant {
+        top: auto;
+        bottom: 10px;
+        width: 90px;
+        height: auto;
+    }
+
+    .carrot {
+        top: auto;
+        bottom: 10px;
+        width: 40px;
+        height: auto;
+    }
+
     .container {
         flex-direction: column;
         align-items: center;
@@ -126,14 +141,15 @@
     }
 
     .image {
-        width: 350px;
+        width: 280px;
         height: 199px;
         object-fit: cover;
         border-radius: 20px;
     }
 
     .photo {
-        width: 350px;
-        height: 199px;
+        width: 280px;
+        height: auto;
+        margin-right: 0;
     }
 }

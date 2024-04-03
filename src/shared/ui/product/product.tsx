@@ -3,6 +3,9 @@ import { Header } from "../header/header";
 import Image from "next/image";
 import { cn } from "@/shared/lib/classNames";
 import { Shantell_Sans } from "next/font/google";
+import { TomatoIcon } from "../icons/TomatoIcon";
+import { OnionIcon } from "../icons/OnionIcon";
+import { CarrotIcon } from "../icons/CarrotIcon";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -38,8 +41,13 @@ const Product = () => {
           <div className={styles.price}>500 руб</div>
           <button className={styles.button}>В корзину</button>
         </div>
+        <div className={styles.backgroungImages}>
+          <TomatoIcon className={styles.tomato}></TomatoIcon>
+          <OnionIcon className={styles.onion}></OnionIcon>
+          <CarrotIcon className={styles.carrot}></CarrotIcon>
+          <CarrotIcon className={styles.carrot2}></CarrotIcon>
+        </div>
       </div>
-      ;
     </>
   );
 };

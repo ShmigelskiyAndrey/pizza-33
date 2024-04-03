@@ -41,3 +41,9 @@
         margin-right: 2%;
     }
 }
+
+@media (max-width: 400px) {
+    .container {
+        height: 280px;
+    }
+}

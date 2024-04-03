@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Header } from "../header/header";
 import { Shantell_Sans } from "next/font/google";
 import { cn } from "@/shared/lib/classNames";
+import { TomatoIcon } from "../icons/TomatoIcon";
+import { OnionIcon } from "../icons/OnionIcon";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -53,6 +55,10 @@ const Aboutfirstblock = () => {
             height={624}
             alt="photo of pizza"
           />
+        </div>
+        <div className={styles.backgroungImages}>
+          <TomatoIcon className={styles.tomato}></TomatoIcon>
+          <OnionIcon className={styles.onion}></OnionIcon>
         </div>
       </div>
     </>

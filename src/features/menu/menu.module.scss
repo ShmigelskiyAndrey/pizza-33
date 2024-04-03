@@ -108,6 +108,51 @@
 }
 
 @media (max-width: 800px) {
+    .onion {
+        width: 50px;
+        height: auto;
+        left: 15%;
+    }
+
+    .eggplant {
+        display: none;
+    }
+    
+    .tomato {
+        display: none;
+    }
+
+    .carrot {
+        width: 50px;
+        height: auto;
+        left: auto;
+        top: auto;
+        right: 15%;
+        bottom: 50px;
+    }
+    
+    .carrot2 {
+        width: 50px;
+        height: auto;
+        left: auto;
+        top: auto;
+        right: 15%;
+        bottom: 50px;
+    }
+
+    .cabage {
+        width: 80px;
+        height: auto;
+    }
+    
+    .tomato2 {
+        display: none;
+    }
+    
+    .onion2 {
+        display: none;
+    }
+
     .container {
         padding-top: 30px;
     }
@@ -134,5 +179,10 @@
 @media (max-width: 500px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cabage {
+        top: 25%;
+        left: 55%;
     }
 }

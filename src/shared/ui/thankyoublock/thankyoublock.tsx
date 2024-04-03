@@ -2,6 +2,9 @@ import styles from "./thankyoublock.module.scss";
 import Image from "next/image";
 import { cn } from "@/shared/lib/classNames";
 import { Shantell_Sans } from "next/font/google";
+import { EggplantIcon } from "../icons/EggplantIcon";
+import { TomatoIcon } from "../icons/TomatoIcon";
+import { CabageIcon } from "../icons/CabageIcon";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -22,7 +25,7 @@ const Thankyoublock = () => {
         </div>
         <button className={firstButton}>Вернуться на главную</button>
       </div>
-      <div>
+      <div className={styles.imagediv}>
         <Image
           className={styles.image}
           src="/photo/thankyouphoto.png"
@@ -32,6 +35,9 @@ const Thankyoublock = () => {
         />
       </div>
       <button className={secondButton}>Вернуться на главную</button>
+      <div className={styles.backgroungImages}>
+        <CabageIcon className={styles.cabage}></CabageIcon>
+      </div>
     </div>
   );
 };
