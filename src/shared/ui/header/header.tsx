@@ -1,8 +1,12 @@
+"use client";
+
 import styles from "./header.module.scss";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { cn } from "@/shared/lib/classNames";
 import localFont from "next/font/local";
+import { CloseIcon } from "../icons/CloseIcon";
+import { Footer } from "../footer/footer";
 
 interface HeaderProps {
   ismainpage: boolean;
@@ -13,6 +17,12 @@ const poetseone = localFont({
 });
 
 const Header: FC<HeaderProps> = (props): JSX.Element => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+    console.log(isOpen);
+  };
+
   const containerClasses = cn(
     styles.container,
     !props.ismainpage && styles.notMain
@@ -59,18 +69,35 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
         </button>
         <div className={styles.cartStatus}></div>
       </div>
+      <div className={isOpen ? styles.burgerMenuOpen : styles.burgerMenu}>
+        {isOpen ? (
+          <div className={styles.menuContainer}>
+            <CloseIcon
+              className={styles.closeIcon}
+              onClick={handleClick}
+            ></CloseIcon>
+            <div className={styles.menuText}>
+              <div className={styles.navigationMob}>
+                <div className={styles.homeMob}>ГЛАВНАЯ</div>
+                <div className={styles.aboutMob}>О НАС</div>
+                <div className={styles.promotionMob}>АКЦИИ</div>
+                <div className={styles.contactsMob}>КОНТАКТЫ</div>
+              </div>
 
-      <div className={styles.burgerMenu}>
-        <button className={styles.burgerButton}>
-          {" "}
-          <Image
-            className={styles.burgerIcon}
-            src="/icons/burgermenuicon.svg"
-            width={60}
-            height={59}
-            alt="cart icon"
-          />
-        </button>
+              <Footer></Footer>
+            </div>
+          </div>
+        ) : (
+          <button className={styles.burgerButton} onClick={handleClick}>
+            <Image
+              className={styles.burgerIcon}
+              src="/icons/burgermenuicon.svg"
+              width={60}
+              height={59}
+              alt="cart icon"
+            />
+          </button>
+        )}
       </div>
     </div>
   );

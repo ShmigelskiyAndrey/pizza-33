@@ -88,6 +88,10 @@
     display: none;
 }
 
+.burgerMenuOpen {
+    display: none;
+}
+
 @media (max-width: 1200px) {
     .contactInformation {
         display: none;
@@ -118,9 +122,54 @@
         background: none;
         border: none;
     }
+
+    .burgerMenuOpen {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        background-color: #1C2033;
+        border-radius: 0 0 0 20px;
+        width: 80%;
+        height: 80vh;
+        z-index: 2;
+    }
+
+    .menuContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 30px;
+        margin-right: 20px;
+        
+    }
+
+    .closeIcon {
+        margin-bottom: 50px;
+        color: #FAF9F4;
+    }
+
+    .menuText {
+        display: flex;
+        flex-direction: column;
+        height: 60vh;
+        justify-content: space-between;
+        text-align: left;
+        width: 100%;
+    }
+
+    .navigationMob {
+        margin-left: 51px;
+    }
+
+    .navigationMob > * {
+        margin-bottom: 45px;
+        font-size: 20px;
+    }
+
   } 
 
-@media (max-width: 500px) {
+@media (max-width: 500px) {    
     .burgerMenu {
         width: 40px;
         height: 23px;
