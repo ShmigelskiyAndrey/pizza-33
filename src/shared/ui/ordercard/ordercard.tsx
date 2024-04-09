@@ -7,6 +7,7 @@ interface CardProps {
   description?: string;
   size: string;
   price: string;
+  count?: number;
 }
 
 const Ordercard = (props: CardProps) => {
@@ -15,7 +16,7 @@ const Ordercard = (props: CardProps) => {
       <div className={styles.container}>
         <Image
           className={styles.image}
-          src={props.photo}
+          src={`/photo/${props.photo}`}
           width={178}
           height={178}
           alt="photo of product"
@@ -26,7 +27,7 @@ const Ordercard = (props: CardProps) => {
           <div className={styles.counter}>
             <button className={styles.plus}>+</button>
             <button className={styles.minus}>-</button>
-            <div className={styles.total}>1</div>
+            <div className={styles.total}>{props.count}</div>
           </div>
         </div>
         <div className={styles.characteristic}>

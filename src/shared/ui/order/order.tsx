@@ -38,6 +38,7 @@ const Order = () => {
                 description={item.description}
                 size={item.size}
                 price={item.price}
+                count={item.count}
               />
             ))}
           </div>
