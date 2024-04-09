@@ -1,5 +1,8 @@
-export const MENU = [
+import { Product } from "@/shared/types/types";
+
+export const MENU: Product[] = [
   {
+    id: 1,
     category: "pizza",
     ispizza: true,
     title: "С ананасом",
@@ -11,6 +14,7 @@ export const MENU = [
   },
 
   {
+    id: 2,
     category: "pizza",
     ispizza: true,
     title: "С тыквой",
@@ -22,6 +26,7 @@ export const MENU = [
   },
 
   {
+    id: 3,
     category: "pizza",
     ispizza: true,
     title: "С пармской ветчиной",
@@ -33,6 +38,7 @@ export const MENU = [
   },
 
   {
+    id: 4,
     category: "pizza",
     ispizza: true,
     title: "Морская",
@@ -44,6 +50,7 @@ export const MENU = [
   },
 
   {
+    id: 5,
     category: "pizza",
     ispizza: true,
     title: "Пепперони",
@@ -54,6 +61,7 @@ export const MENU = [
   },
 
   {
+    id: 6,
     category: "pizza",
     ispizza: true,
     title: "4 сыра",
@@ -65,6 +73,7 @@ export const MENU = [
   },
 
   {
+    id: 7,
     category: "drink",
     ispizza: false,
     title: "Лимонад Вишня",
@@ -74,6 +83,7 @@ export const MENU = [
   },
 
   {
+    id: 8,
     category: "drink",
     ispizza: false,
     title: "Лимонад Цитрус/Пихта",
@@ -83,6 +93,7 @@ export const MENU = [
   },
 
   {
+    id: 9,
     category: "drink",
     ispizza: false,
     title: "Лимонад Эстрагон",

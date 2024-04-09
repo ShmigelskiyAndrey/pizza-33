@@ -10,6 +10,7 @@ interface CardProps {
   description?: string;
   size: string;
   price: string;
+  onClick: VoidFunction;
 }
 
 const Card: FC<CardProps> = (props): JSX.Element => {
@@ -36,7 +37,9 @@ const Card: FC<CardProps> = (props): JSX.Element => {
         <div className={styles.size}>{props.size}</div>
         <div className={styles.price}>{props.price} руб</div>
       </div>
-      <button className={styles.button}>В корзину</button>
+      <button className={styles.button} onClick={props.onClick}>
+        В корзину
+      </button>
     </div>
   );
 };

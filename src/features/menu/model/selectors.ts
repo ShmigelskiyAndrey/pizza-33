@@ -9,4 +9,8 @@ const selectMenuItemsByFilter = (state: RootState) => {
   return state.menuReducer;
 };
 
-export { selectMenuItemsByFilter };
+const selectOrderedProducts = (state: RootState) => {
+  return Object.values(state.orderReducer.cart);
+};
+
+export { selectMenuItemsByFilter, selectOrderedProducts };

@@ -3,6 +3,8 @@ import { Ordercard } from "../ordercard/ordercard";
 import Image from "next/image";
 import { Shantell_Sans } from "next/font/google";
 import { cn } from "@/shared/lib/classNames";
+import { useAppSelector } from "@/shared/lib/redux";
+import { selectOrderedProducts } from "@/features/menu/model/selectors";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -11,6 +13,7 @@ const shantellSans = Shantell_Sans({
 
 const Order = () => {
   const titleClass = cn(shantellSans.className, styles.title);
+  const data = useAppSelector(selectOrderedProducts);
   return (
     <>
       <div className={styles.container}>
@@ -27,8 +30,16 @@ const Order = () => {
         </div>
         <div className={styles.content}>
           <div className={styles.products}>
-            <Ordercard></Ordercard>
-            <Ordercard></Ordercard>
+            {data.map((item) => (
+              <Ordercard
+                key={item.id}
+                photo={item.photo}
+                title={item.title}
+                description={item.description}
+                size={item.size}
+                price={item.price}
+              />
+            ))}
           </div>
           <div className={styles.delivery}>
             <div className={styles.subtitle}>Доставка</div>

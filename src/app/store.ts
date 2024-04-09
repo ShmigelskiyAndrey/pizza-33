@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { menuReducer } from "@/features/menu/model/menuSlice";
 import { filterReducer } from "@/features/menu/model/filterSlice";
+import { orderReducer } from "@/features/menu/model/orderSlice";
 
 export const makeStore = () => {
   return configureStore({
-    reducer: { menuReducer, filterReducer },
+    reducer: { menuReducer, filterReducer, orderReducer },
   });
 };
 

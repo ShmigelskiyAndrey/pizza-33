@@ -20,7 +20,6 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
-    console.log(isOpen);
   };
 
   const containerClasses = cn(

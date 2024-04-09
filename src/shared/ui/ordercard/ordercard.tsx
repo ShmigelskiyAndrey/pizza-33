@@ -1,23 +1,28 @@
 import styles from "./ordercard.module.scss";
 import Image from "next/image";
 
-const Ordercard = () => {
+interface CardProps {
+  photo: string;
+  title: string;
+  description?: string;
+  size: string;
+  price: string;
+}
+
+const Ordercard = (props: CardProps) => {
   return (
     <>
       <div className={styles.container}>
         <Image
           className={styles.image}
-          src="/photo/pizzaHam.png"
+          src={props.photo}
           width={178}
           height={178}
           alt="photo of product"
         />
         <div className={styles.info}>
-          <div className={styles.name}>Цыпленок карри</div>
-          <div className={styles.description}>
-            Томатный соус, моцарелла, цыплёнок, зеленый перец, помидоры, соус
-            карри
-          </div>
+          <div className={styles.name}>{props.title}</div>
+          <div className={styles.description}>{props.description}</div>
           <div className={styles.counter}>
             <button className={styles.plus}>+</button>
             <button className={styles.minus}>-</button>
@@ -27,9 +32,9 @@ const Ordercard = () => {
         <div className={styles.characteristic}>
           <div className={styles.sizechar}>
             <div className={styles.sizecircle}></div>
-            <div className={styles.size}>36 см</div>
+            <div className={styles.size}>{props.size}</div>
           </div>
-          <div className={styles.price}>500 руб</div>
+          <div className={styles.price}>{props.price}</div>
         </div>
         <div className={styles.close}>
           <button className={styles.closebtn}>
