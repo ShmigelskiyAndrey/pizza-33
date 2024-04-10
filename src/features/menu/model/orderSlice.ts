@@ -25,8 +25,23 @@ const orderSlice = createSlice({
         state.cart[action.payload.id] = obj;
       }
     },
+    increment(state, action: PayloadAction<number>) {
+      const count = state.cart[action.payload].count ?? 1;
+      state.cart[action.payload].count = count + 1;
+    },
+    decrement(state, action: PayloadAction<number>) {
+      const count = state.cart[action.payload].count ?? 1;
+      if (count <= 1) {
+        delete state.cart[action.payload];
+      } else {
+        state.cart[action.payload].count = count - 1;
+      }
+    },
+    kick(state, action: PayloadAction<number>) {
+      delete state.cart[action.payload];
+    },
   },
 });
 
 export const orderReducer = orderSlice.reducer;
-export const { add } = orderSlice.actions;
+export const { add, increment, decrement, kick } = orderSlice.actions;

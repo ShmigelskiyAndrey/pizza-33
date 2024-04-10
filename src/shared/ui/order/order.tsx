@@ -3,17 +3,25 @@ import { Ordercard } from "../ordercard/ordercard";
 import Image from "next/image";
 import { Shantell_Sans } from "next/font/google";
 import { cn } from "@/shared/lib/classNames";
-import { useAppSelector } from "@/shared/lib/redux";
-import { selectOrderedProducts } from "@/features/menu/model/selectors";
+import { useAppSelector, useAppDispatch } from "@/shared/lib/redux";
+import {
+  selectOrderedProducts,
+  selectTotalPrice,
+} from "@/features/menu/model/selectors";
+import { increment, decrement, kick } from "@/features/menu/model/orderSlice";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
   subsets: ["latin"],
 });
 
+const deliveryPrice = 100;
+
 const Order = () => {
   const titleClass = cn(shantellSans.className, styles.title);
   const data = useAppSelector(selectOrderedProducts);
+  const totalPrice = useAppSelector(selectTotalPrice);
+  const dispatch = useAppDispatch();
   return (
     <>
       <div className={styles.container}>
@@ -39,6 +47,15 @@ const Order = () => {
                 size={item.size}
                 price={item.price}
                 count={item.count}
+                onIncrement={() => {
+                  dispatch(increment(item.id));
+                }}
+                onDecrement={() => {
+                  dispatch(decrement(item.id));
+                }}
+                onKick={() => {
+                  dispatch(kick(item.id));
+                }}
               />
             ))}
           </div>
@@ -102,10 +119,16 @@ const Order = () => {
               <div className={styles.orderdetails}>
                 <div className={styles.totalprice}>
                   <div className={styles.totaltitle}>К оплате: </div>
-                  <div className={styles.totalsum}>500 руб</div>
+                  <div className={styles.totalsum}>
+                    {totalPrice + deliveryPrice} руб
+                  </div>
                 </div>
-                <div className={styles.productsprice}>Заказ: 400 руб</div>
-                <div className={styles.deliveryprice}>Доставка: 100 руб</div>
+                <div className={styles.productsprice}>
+                  Заказ: {totalPrice} руб
+                </div>
+                <div className={styles.deliveryprice}>
+                  Доставка: {deliveryPrice} руб
+                </div>
               </div>
             </div>
           </div>

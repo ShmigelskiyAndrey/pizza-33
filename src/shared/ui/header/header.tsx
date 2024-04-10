@@ -7,6 +7,8 @@ import { cn } from "@/shared/lib/classNames";
 import localFont from "next/font/local";
 import { CloseIcon } from "../icons/CloseIcon";
 import { Footer } from "../footer/footer";
+import { selectIsCartNotEmpty } from "@/features/menu/model/selectors";
+import { useAppSelector } from "@/shared/lib/redux";
 
 interface HeaderProps {
   ismainpage: boolean;
@@ -17,6 +19,7 @@ const poetseone = localFont({
 });
 
 const Header: FC<HeaderProps> = (props): JSX.Element => {
+  const isNotEmpty = useAppSelector(selectIsCartNotEmpty);
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -66,7 +69,7 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
             alt="cart icon"
           />
         </button>
-        <div className={styles.cartStatus}></div>
+        {isNotEmpty && <div className={styles.cartStatus}></div>}
       </div>
       <div className={isOpen ? styles.burgerMenuOpen : styles.burgerMenu}>
         {isOpen ? (

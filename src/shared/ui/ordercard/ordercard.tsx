@@ -2,11 +2,14 @@ import styles from "./ordercard.module.scss";
 import Image from "next/image";
 
 interface CardProps {
+  onIncrement?: VoidFunction;
+  onDecrement?: VoidFunction;
+  onKick?: VoidFunction;
   photo: string;
   title: string;
   description?: string;
   size: string;
-  price: string;
+  price: number;
   count?: number;
 }
 
@@ -15,6 +18,7 @@ const Ordercard = (props: CardProps) => {
     <>
       <div className={styles.container}>
         <Image
+          priority={true}
           className={styles.image}
           src={`/photo/${props.photo}`}
           width={178}
@@ -25,8 +29,12 @@ const Ordercard = (props: CardProps) => {
           <div className={styles.name}>{props.title}</div>
           <div className={styles.description}>{props.description}</div>
           <div className={styles.counter}>
-            <button className={styles.plus}>+</button>
-            <button className={styles.minus}>-</button>
+            <button className={styles.plus} onClick={props.onIncrement}>
+              +
+            </button>
+            <button className={styles.minus} onClick={props.onDecrement}>
+              -
+            </button>
             <div className={styles.total}>{props.count}</div>
           </div>
         </div>
@@ -38,7 +46,7 @@ const Ordercard = (props: CardProps) => {
           <div className={styles.price}>{props.price}</div>
         </div>
         <div className={styles.close}>
-          <button className={styles.closebtn}>
+          <button className={styles.closebtn} onClick={props.onKick}>
             <Image
               className={styles.closeicon}
               src="/icons/closebutton.svg"

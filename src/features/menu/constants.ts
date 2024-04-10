@@ -9,7 +9,7 @@ export const MENU: Product[] = [
     description:
       "Томатный соус, ананас, грецкие орехи, брокколи, ветчина, томаты черри, моцарелла",
     size: "33 см",
-    price: "500",
+    price: 500,
     photo: "pizzaPinapple.png",
   },
 
@@ -21,7 +21,7 @@ export const MENU: Product[] = [
     description:
       "Томатный соус, тыква, томаты черри, красный лук, мясной фарш, моцарелла",
     size: "33 см",
-    price: "500",
+    price: 500,
     photo: "pizzaPumpkin.png",
   },
 
@@ -33,7 +33,7 @@ export const MENU: Product[] = [
     description:
       "Сливочный соус, пармская ветчина, томаты черри, груша, руккола, моцарелла",
     size: "33 см",
-    price: "500",
+    price: 500,
     photo: "pizzaHam.png",
   },
 
@@ -45,7 +45,7 @@ export const MENU: Product[] = [
     description:
       "Томатный соус, креветки, мидии, грецкие орехи, морские водоросли, моцарелла",
     size: "33 см",
-    price: "500",
+    price: 500,
     photo: "pizzaSea.png",
   },
 
@@ -56,7 +56,7 @@ export const MENU: Product[] = [
     title: "Пепперони",
     description: "Томатный соус, салями, красный перец чилли, моцарелла",
     size: "33 см",
-    price: "500",
+    price: 500,
     photo: "pizzaPeperoni.png",
   },
 
@@ -68,7 +68,7 @@ export const MENU: Product[] = [
     description:
       "Томатный соус, маасдам, моцарелла, пармезан, дорблю с голубой плесенью",
     size: "33 см",
-    price: "500",
+    price: 500,
     photo: "pizzCheese.png",
   },
 
@@ -78,7 +78,7 @@ export const MENU: Product[] = [
     ispizza: false,
     title: "Лимонад Вишня",
     size: "250 мл",
-    price: "100",
+    price: 100,
     photo: "bottleCherry.png",
   },
 
@@ -88,7 +88,7 @@ export const MENU: Product[] = [
     ispizza: false,
     title: "Лимонад Цитрус/Пихта",
     size: "250 мл",
-    price: "100",
+    price: 100,
     photo: "bottleOrange.png",
   },
 
@@ -98,7 +98,7 @@ export const MENU: Product[] = [
     ispizza: false,
     title: "Лимонад Эстрагон",
     size: "250 мл",
-    price: "100",
+    price: 100,
     photo: "bottleEstragon.png",
   },
 ];
