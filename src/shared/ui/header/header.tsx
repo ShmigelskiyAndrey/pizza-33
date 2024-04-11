@@ -9,6 +9,7 @@ import { CloseIcon } from "../icons/CloseIcon";
 import { Footer } from "../footer/footer";
 import { selectIsCartNotEmpty } from "@/features/menu/model/selectors";
 import { useAppSelector } from "@/shared/lib/redux";
+import Link from "next/link";
 
 interface HeaderProps {
   ismainpage: boolean;
@@ -53,23 +54,33 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
           </div>
         </div>
         <div className={styles.navigation}>
-          <div className={styles.home}>ГЛАВНАЯ</div>
-          <div className={styles.about}>О НАС</div>
-          <div className={styles.promotion}>АКЦИИ</div>
-          <div className={styles.contacts}>КОНТАКТЫ</div>
+          <div className={styles.home}>
+            <Link href="/">ГЛАВНАЯ</Link>
+          </div>
+          <div className={styles.about}>
+            <Link href="/about">О НАС</Link>
+          </div>
+          <div className={styles.promotion}>
+            <Link href="#promo">АКЦИИ</Link>
+          </div>
+          <div className={styles.contacts}>
+            <Link href="#contacts">КОНТАКТЫ</Link>
+          </div>
         </div>
       </div>
 
       <div className={styles.cart}>
-        <button className={styles.cartIcon}>
-          <Image
-            src="/icons/carticon.svg"
-            width={28}
-            height={33}
-            alt="cart icon"
-          />
-        </button>
-        {isNotEmpty && <div className={styles.cartStatus}></div>}
+        <Link href="/order">
+          <button className={styles.cartIcon}>
+            <Image
+              src="/icons/carticon.svg"
+              width={28}
+              height={33}
+              alt="cart icon"
+            />
+          </button>
+          {isNotEmpty && <div className={styles.cartStatus}></div>}
+        </Link>
       </div>
       <div className={isOpen ? styles.burgerMenuOpen : styles.burgerMenu}>
         {isOpen ? (

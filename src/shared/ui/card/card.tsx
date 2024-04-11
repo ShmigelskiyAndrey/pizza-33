@@ -9,7 +9,7 @@ interface CardProps {
   title: string;
   description?: string;
   size: string;
-  price: string;
+  price: number;
   onClick: VoidFunction;
 }
 

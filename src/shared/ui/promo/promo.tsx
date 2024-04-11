@@ -4,6 +4,7 @@ import { cn } from "@/shared/lib/classNames";
 import localFont from "next/font/local";
 import { EggplantIcon } from "../icons/EggplantIcon";
 import { CarrotIcon } from "../icons/CarrotIcon";
+import Link from "next/link";
 
 const poetseone = localFont({
   src: "../../../../public/fonts/PoetsenOne-Regular.otf",
@@ -13,7 +14,7 @@ const Promo = () => {
   const offerClass = cn(poetseone.className, styles.offer);
   const sumClass = cn(poetseone.className, styles.sum);
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="promo">
       <div className={styles.text}>
         <div className={styles.mainText}>
           <p className={offerClass}>Получите скидку на первый заказ!</p>
@@ -22,7 +23,9 @@ const Promo = () => {
 
         <div className={styles.secondText}>
           <p className={styles.title}>Подробнее смотрите</p>
-          <button className={styles.button}>здесь</button>
+          <button className={styles.button}>
+            <Link href="/about">здесь</Link>
+          </button>
         </div>
       </div>
 

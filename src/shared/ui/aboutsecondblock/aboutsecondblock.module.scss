@@ -41,6 +41,10 @@
     right: 5%;
 }
 
+.link {
+    padding: 26px 50px;
+}
+
 @media (max-width: 1200px) {
     .cards > *:nth-child(2n){
         margin-left: 0;
@@ -48,6 +52,10 @@
 }
 
 @media (max-width: 800px) {
+    .link {
+        padding: 0;
+    }
+
     .whale {
         width: 400px;
         height: auto;

@@ -4,6 +4,7 @@ import { CARDS } from "./constants";
 import { Shantell_Sans } from "next/font/google";
 import { cn } from "@/shared/lib/classNames";
 import { WhaleIcon } from "../icons/WhaleIcon";
+import Link from "next/link";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -25,7 +26,13 @@ const Aboutsecondblock = () => {
           ></Aboutcard>
         ))}
       </div>
-      <button className={styles.button}>Вернуться на главную</button>
+
+      <button className={styles.button}>
+        <Link href="/" className={styles.link}>
+          Вернуться на главную
+        </Link>
+      </button>
+
       <div className={styles.backgroungImages}>
         <WhaleIcon className={styles.whale}></WhaleIcon>
       </div>

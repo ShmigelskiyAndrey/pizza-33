@@ -9,6 +9,8 @@ import {
   selectTotalPrice,
 } from "@/features/menu/model/selectors";
 import { increment, decrement, kick } from "@/features/menu/model/orderSlice";
+import { useState } from "react";
+import Link from "next/link";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -22,12 +24,17 @@ const Order = () => {
   const data = useAppSelector(selectOrderedProducts);
   const totalPrice = useAppSelector(selectTotalPrice);
   const dispatch = useAppDispatch();
+  const [deliveryOption, setDeliveryOption] = useState(true);
   return (
     <>
       <div className={styles.container}>
         <div className={styles.text}>
           <div className={titleClass}>Корзина</div>
-          <button className={styles.backbtn}>Вернуться на главную</button>
+
+          <button className={styles.backbtn}>
+            <Link href="/">Вернуться на главную</Link>
+          </button>
+
           <Image
             className={styles.closeicon}
             src="/icons/closebutton.svg"
@@ -62,7 +69,10 @@ const Order = () => {
           <div className={styles.delivery}>
             <div className={styles.subtitle}>Доставка</div>
             <fieldset className={styles.options}>
-              <div className={styles.firstradio}>
+              <div
+                className={styles.firstradio}
+                onClick={() => setDeliveryOption(false)}
+              >
                 <label htmlFor="pickup" className={styles.label}>
                   Самовывоз
                 </label>
@@ -72,10 +82,12 @@ const Order = () => {
                   name="deliverymethod"
                   value="pickup"
                   className={styles.radiobtn}
-                  defaultChecked
                 />
               </div>
-              <div className={styles.secondradio}>
+              <div
+                className={styles.secondradio}
+                onClick={() => setDeliveryOption(true)}
+              >
                 <label htmlFor="delivery" className={styles.label}>
                   Доставка на дом
                 </label>
@@ -85,6 +97,7 @@ const Order = () => {
                   name="deliverymethod"
                   value="delivery"
                   className={styles.radiobtn}
+                  defaultChecked
                 />
               </div>
             </fieldset>
@@ -120,14 +133,15 @@ const Order = () => {
                 <div className={styles.totalprice}>
                   <div className={styles.totaltitle}>К оплате: </div>
                   <div className={styles.totalsum}>
-                    {totalPrice + deliveryPrice} руб
+                    {deliveryOption ? totalPrice + deliveryPrice : totalPrice}{" "}
+                    руб
                   </div>
                 </div>
                 <div className={styles.productsprice}>
                   Заказ: {totalPrice} руб
                 </div>
                 <div className={styles.deliveryprice}>
-                  Доставка: {deliveryPrice} руб
+                  Доставка: {deliveryOption ? deliveryPrice : "0"} руб
                 </div>
               </div>
             </div>

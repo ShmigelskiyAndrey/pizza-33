@@ -14,6 +14,7 @@ import { CabageIcon } from "@/shared/ui/icons/CabageIcon";
 import { CarrotIcon } from "@/shared/ui/icons/CarrotIcon";
 import { EggplantIcon } from "@/shared/ui/icons/EggplantIcon";
 import { OnionIcon } from "@/shared/ui/icons/OnionIcon";
+import Link from "next/link";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -26,7 +27,7 @@ const Menu = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="menu">
       <p className={titleClass}>Меню</p>
 
       <div className={styles.navbar}>
@@ -45,8 +46,8 @@ const Menu = () => {
         >
           Напитки
         </button>
-        <button onClick={() => dispatch(setFilter(""))} className={styles.btn}>
-          Акции
+        <button className={styles.btn}>
+          <Link href="#promo">Акции</Link>
         </button>
       </div>
 

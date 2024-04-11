@@ -2,6 +2,7 @@ import styles from "./firstblock.module.scss";
 import { Header } from "../header/header";
 import { cn } from "@/shared/lib/classNames";
 import localFont from "next/font/local";
+import Link from "next/link";
 
 const poetseone = localFont({
   src: "../../../../public/fonts/PoetsenOne-Regular.otf",
@@ -16,7 +17,9 @@ const Firstblock = () => {
       <div className={styles.container}>
         <div className={titleClass}>Наслаждайтесь нашей фирменной пиццей </div>
         <div className={subtitleClass}>Скидка 30% на первый заказ</div>
-        <button className={styles.button}>Заказать</button>
+        <Link href="#menu">
+          <button className={styles.button}>Заказать</button>
+        </Link>
       </div>
     </div>
   );
