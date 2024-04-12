@@ -1,3 +1,5 @@
+"use client";
+
 import { Product } from "../../../shared/ui/product/product";
 
 const Productpage = () => {

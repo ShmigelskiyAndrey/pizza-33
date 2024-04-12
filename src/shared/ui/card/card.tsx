@@ -1,19 +1,27 @@
 import styles from "./card.module.scss";
-import { FC } from "react";
+import { FC, SyntheticEvent } from "react";
 import Image from "next/image";
 import { cn } from "@/shared/lib/classNames";
+import { selectCountById } from "@/features/menu/model/selectors";
+import { useAppSelector } from "@/shared/lib/redux";
+import Link from "next/link";
 
 interface CardProps {
+  id: number;
   ispizza: boolean;
   photo: string;
   title: string;
   description?: string;
   size: string;
   price: number;
-  onClick: VoidFunction;
+  onClick: (e: SyntheticEvent) => void;
+  onIncrement: (e: SyntheticEvent) => void;
+  onDecrement: (e: SyntheticEvent) => void;
 }
 
 const Card: FC<CardProps> = (props): JSX.Element => {
+  const count = useAppSelector(selectCountById(props.id));
+
   const imageClasses = cn(
     styles.pizzaImage,
     !props.ispizza && styles.bottleImage
@@ -23,7 +31,7 @@ const Card: FC<CardProps> = (props): JSX.Element => {
     !props.ispizza && styles.nonDescription
   );
   return (
-    <div className={styles.container}>
+    <Link href={`/product/${props.id}`} className={styles.container}>
       <Image
         className={imageClasses}
         src={`/photo/${props.photo}`}
@@ -37,10 +45,22 @@ const Card: FC<CardProps> = (props): JSX.Element => {
         <div className={styles.size}>{props.size}</div>
         <div className={styles.price}>{props.price} руб</div>
       </div>
-      <button className={styles.button} onClick={props.onClick}>
-        В корзину
-      </button>
-    </div>
+      {count ? (
+        <div className={styles.counter}>
+          <button className={styles.increment} onClick={props.onIncrement}>
+            +
+          </button>
+          <button className={styles.decrement} onClick={props.onDecrement}>
+            -
+          </button>
+          <div className={styles.count}>{count}</div>
+        </div>
+      ) : (
+        <button className={styles.button} onClick={props.onClick}>
+          В корзину
+        </button>
+      )}
+    </Link>
   );
 };
 

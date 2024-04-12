@@ -4,7 +4,7 @@ import styles from "./menu.module.scss";
 import { Card } from "../../shared/ui/card/card";
 import { useAppDispatch, useAppSelector } from "@/shared/lib/redux";
 import { adder, devide, pizza } from "./model/menuSlice";
-import { add } from "./model/orderSlice";
+import { add, decrement, increment } from "./model/orderSlice";
 import { selectMenuItemsByFilter } from "./model/selectors";
 import { setFilter } from "./model/filterSlice";
 import { Shantell_Sans } from "next/font/google";
@@ -54,6 +54,7 @@ const Menu = () => {
       <div className={styles.cards}>
         {data.map((item) => (
           <Card
+            id={item.id}
             key={item.photo}
             ispizza={item.ispizza}
             title={item.title}
@@ -61,8 +62,17 @@ const Menu = () => {
             size={item.size}
             price={item.price}
             photo={item.photo}
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               dispatch(add(item));
+            }}
+            onIncrement={(e) => {
+              e.preventDefault();
+              dispatch(increment(item.id));
+            }}
+            onDecrement={(e) => {
+              e.preventDefault();
+              dispatch(decrement(item.id));
             }}
           />
         ))}

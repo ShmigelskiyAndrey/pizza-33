@@ -50,6 +50,10 @@
     font-family: inherit;
 }
 
+.image {
+    object-fit: contain;
+}
+
 .tomato {
     position: absolute;
     top: 250px;

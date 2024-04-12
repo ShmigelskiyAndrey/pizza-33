@@ -29,9 +29,19 @@ const selectTotalPrice = (state: RootState) => {
   );
 };
 
+const selectCountById = (id: number) => (state: RootState) => {
+  return state.orderReducer.cart[id]?.count;
+};
+
+const selectChosenProduct = (id: number) => (state: RootState) => {
+  return state.menuReducer.find((item) => item.id === id);
+};
+
 export {
   selectMenuItemsByFilter,
   selectOrderedProducts,
   selectIsCartNotEmpty,
   selectTotalPrice,
+  selectCountById,
+  selectChosenProduct,
 };
