@@ -9,11 +9,12 @@
 }
 
 .text {
-    height: 700px;
+    margin-top: 150px;
+    height: 500px;
     max-width: 900px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     color: #1A1009;
 }
 
@@ -25,6 +26,7 @@
     font-size: 64px;
     max-width: 600px;
     text-align: end;
+    margin-top: 10px;
 }
 
 .sum {
@@ -129,6 +131,7 @@
     .text {
         justify-content: center;
         height: fit-content;
+        margin-top: 0;
     }
 
     .secondText {

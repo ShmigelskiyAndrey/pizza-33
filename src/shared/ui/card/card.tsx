@@ -47,11 +47,11 @@ const Card: FC<CardProps> = (props): JSX.Element => {
       </div>
       {count ? (
         <div className={styles.counter}>
-          <button className={styles.increment} onClick={props.onIncrement}>
-            +
-          </button>
           <button className={styles.decrement} onClick={props.onDecrement}>
             -
+          </button>
+          <button className={styles.increment} onClick={props.onIncrement}>
+            +
           </button>
           <div className={styles.count}>{count}</div>
         </div>

@@ -61,10 +61,10 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
             <Link href="/about">О НАС</Link>
           </div>
           <div className={styles.promotion}>
-            <Link href="#promo">АКЦИИ</Link>
+            <Link href="/#promo">АКЦИИ</Link>
           </div>
           <div className={styles.contacts}>
-            <Link href="#contacts">КОНТАКТЫ</Link>
+            <Link href="/#contacts">КОНТАКТЫ</Link>
           </div>
         </div>
       </div>
@@ -91,10 +91,18 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
             ></CloseIcon>
             <div className={styles.menuText}>
               <div className={styles.navigationMob}>
-                <div className={styles.homeMob}>ГЛАВНАЯ</div>
-                <div className={styles.aboutMob}>О НАС</div>
-                <div className={styles.promotionMob}>АКЦИИ</div>
-                <div className={styles.contactsMob}>КОНТАКТЫ</div>
+                <div className={styles.homeMob}>
+                  <Link href="/">ГЛАВНАЯ</Link>
+                </div>
+                <div className={styles.aboutMob}>
+                  <Link href="/about">О НАС</Link>
+                </div>
+                <div className={styles.promotionMob}>
+                  <Link href="/#promo">АКЦИИ</Link>
+                </div>
+                <div className={styles.contactsMob}>
+                  <Link href="/#promo">КОНТАКТЫ</Link>
+                </div>
               </div>
 
               <Footer></Footer>

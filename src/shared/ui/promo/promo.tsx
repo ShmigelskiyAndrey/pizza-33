@@ -41,7 +41,9 @@ const Promo = () => {
 
       <div className={styles.secondTextAlt}>
         <p className={styles.title}>Подробнее смотрите</p>
-        <button className={styles.button}>здесь</button>
+        <button className={styles.button}>
+          <Link href="/about">здесь</Link>
+        </button>
       </div>
       <div className={styles.backgroungImages}>
         <EggplantIcon className={styles.eggplant}></EggplantIcon>

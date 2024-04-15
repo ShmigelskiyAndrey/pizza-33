@@ -1,6 +1,6 @@
 .container {
     width: 680px;
-    height: 240px;
+    height: 280px;
     background-color: #FFF5E8;
     border-radius: 10px;
     display: flex;
@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 146px;
+    height: 200px;
     max-width: 300px;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .characteristic {
-    height: 140px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -107,6 +107,10 @@
         position: relative;
         top: 40px;
         right: 70px;
+    }
+
+    .counterBottle {
+        top: 55px;
     }
 
     .name {
