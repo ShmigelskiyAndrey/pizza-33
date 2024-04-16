@@ -159,8 +159,22 @@
     width: 680px;
 }
 
+.lineBlock {
+    max-width: 1400px;
+
+}
+
+.line {
+    width: 100%;
+    height: fit-content;
+
+}
 
 @media (max-width: 1400px) {
+    .lineBlock {
+        max-width: 680px;
+    }
+
     .title {
         width: auto;
     }
@@ -185,6 +199,9 @@
 }
 
 @media (max-width: 800px) {
+    .lineBlock {
+        max-width: 280px;
+    }
     .products {
         width: 280px;
     }

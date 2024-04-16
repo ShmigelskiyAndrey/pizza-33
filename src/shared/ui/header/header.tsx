@@ -10,9 +10,11 @@ import { Footer } from "../footer/footer";
 import { selectIsCartNotEmpty } from "@/features/menu/model/selectors";
 import { useAppSelector } from "@/shared/lib/redux";
 import Link from "next/link";
+import { UnderlineIcon } from "../icons/UnderlineIcon";
 
 interface HeaderProps {
   ismainpage: boolean;
+  isMainPageSelected: boolean;
 }
 
 const poetseone = localFont({
@@ -56,9 +58,19 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
         <div className={styles.navigation}>
           <div className={styles.home}>
             <Link href="/">ГЛАВНАЯ</Link>
+            <UnderlineIcon
+              className={
+                props.isMainPageSelected ? styles.line : styles.lineInvis
+              }
+            ></UnderlineIcon>
           </div>
           <div className={styles.about}>
             <Link href="/about">О НАС</Link>
+            <UnderlineIcon
+              className={
+                props.isMainPageSelected ? styles.lineInvis : styles.line
+              }
+            ></UnderlineIcon>
           </div>
           <div className={styles.promotion}>
             <Link href="/#promo">АКЦИИ</Link>

@@ -55,15 +55,25 @@
 
 .home {
     margin-right: 60px;
+    display: flex;
+    flex-direction: column;
 }
 
 .about {
     margin-right: 60px;
     min-width: 52px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .promotion {
     margin-right: 60px;
+}
+
+.cart {
+    position: sticky;
+    top: 20px;
 }
 
 .cartIcon {
@@ -91,6 +101,14 @@
 }
 
 .burgerMenuOpen {
+    display: none;
+}
+
+.line {
+    margin-top: 5px;
+}
+
+.lineInvis {
     display: none;
 }
 

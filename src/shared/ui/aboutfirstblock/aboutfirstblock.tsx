@@ -15,7 +15,7 @@ const Aboutfirstblock = () => {
   const titleClass = cn(shantellSans.className, styles.title);
   return (
     <>
-      <Header ismainpage={false}></Header>
+      <Header ismainpage={false} isMainPageSelected={false}></Header>
       <div className={styles.container}>
         <div className={styles.text}>
           <div className={titleClass}>О нас</div>

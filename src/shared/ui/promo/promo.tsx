@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { EggplantIcon } from "../icons/EggplantIcon";
 import { CarrotIcon } from "../icons/CarrotIcon";
 import Link from "next/link";
+import { CurvedLineIcon } from "../icons/CurvedLine";
 
 const poetseone = localFont({
   src: "../../../../public/fonts/PoetsenOne-Regular.otf",
@@ -20,7 +21,7 @@ const Promo = () => {
           <p className={offerClass}>Получите скидку на первый заказ!</p>
           <p className={sumClass}>33%</p>
         </div>
-
+        <CurvedLineIcon className={styles.line}></CurvedLineIcon>
         <div className={styles.secondText}>
           <p className={styles.title}>Подробнее смотрите</p>
           <button className={styles.button}>

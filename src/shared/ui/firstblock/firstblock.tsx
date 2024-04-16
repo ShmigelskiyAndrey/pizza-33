@@ -13,7 +13,7 @@ const Firstblock = () => {
   const subtitleClass = cn(poetseone.className, styles.subtitle);
   return (
     <div>
-      <Header ismainpage={true}></Header>
+      <Header ismainpage={true} isMainPageSelected={true}></Header>
       <div className={styles.container}>
         <div className={titleClass}>Наслаждайтесь нашей фирменной пиццей </div>
         <div className={subtitleClass}>Скидка 30% на первый заказ</div>

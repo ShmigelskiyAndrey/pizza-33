@@ -22,6 +22,7 @@
     width: 100%;
     margin-bottom: 92px;
     margin-left: 5%;
+    display: flex;
 }
 
 .navbar button{
@@ -30,6 +31,7 @@
     color: #1A1009;
     font-size: 24px;
     margin-right: 1em;
+
 }
 
 .navbar button:last-child {
@@ -43,7 +45,29 @@
 
 .btn {
     font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
+}
+
+.lineAll {
+    width: 130px;
+    height: auto;
+    display: none;
+}
+
+.linePizza {
+    width: 90%;
+    display: none;
+}
+
+.lineDrinks {
+    display: none;
+}
+
+.lineNotInvis {
+    display: block;
 }
 
 .onion {

@@ -11,6 +11,7 @@ import { useAppDispatch, useAppSelector } from "@/shared/lib/redux";
 import { useParams } from "next/navigation";
 import { add } from "@/features/menu/model/orderSlice";
 import Link from "next/link";
+import { CurvedLineIcon } from "../icons/CurvedLine";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -24,10 +25,11 @@ const Product = () => {
   const dispatch = useAppDispatch();
   return (
     <>
-      <Header ismainpage={false}></Header>
+      <Header ismainpage={false} isMainPageSelected={true}></Header>
       <div className={styles.container}>
         <div className={styles.product}>
           <div className={titleClass}>{selectedItem?.title}</div>
+          <CurvedLineIcon className={styles.line}></CurvedLineIcon>
           <Image
             className={styles.image}
             src={`/photo/${selectedItem?.photo}`}

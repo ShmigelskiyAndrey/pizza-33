@@ -1,14 +1,24 @@
 import { RootState } from "@/app/store";
 import { createSelector } from "@reduxjs/toolkit";
 
-const selectMenuItemsByFilter = (state: RootState) => {
-  if (state.filterReducer) {
-    return state.menuReducer.filter(
-      (element) => element.category === state.filterReducer
-    );
-  }
+const selectMenu = (state: RootState) => {
   return state.menuReducer;
 };
+
+const selectFilter = (state: RootState) => {
+  return state.filterReducer;
+};
+
+const selectMenuItemsByFilter = createSelector(
+  selectMenu,
+  selectFilter,
+  (menu, filter) => {
+    if (filter) {
+      return menu.filter((element) => element.category === filter);
+    }
+    return menu;
+  }
+);
 
 const selectCartObject = (state: RootState) => state.orderReducer.cart;
 

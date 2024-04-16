@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "@/shared/lib/redux";
 import { adder, devide, pizza } from "./model/menuSlice";
 import { add, decrement, increment } from "./model/orderSlice";
 import { selectMenuItemsByFilter } from "./model/selectors";
-import { setFilter } from "./model/filterSlice";
+import { filterReducer, setFilter } from "./model/filterSlice";
 import { Shantell_Sans } from "next/font/google";
 import { cn } from "@/shared/lib/classNames";
 import { TomatoIcon } from "@/shared/ui/icons/TomatoIcon";
@@ -15,6 +15,7 @@ import { CarrotIcon } from "@/shared/ui/icons/CarrotIcon";
 import { EggplantIcon } from "@/shared/ui/icons/EggplantIcon";
 import { OnionIcon } from "@/shared/ui/icons/OnionIcon";
 import Link from "next/link";
+import { UnderlineIcon } from "@/shared/ui/icons/UnderlineIcon";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -25,6 +26,18 @@ const Menu = () => {
   const titleClass = cn(shantellSans.className, styles.title);
   const data = useAppSelector(selectMenuItemsByFilter);
   const dispatch = useAppDispatch();
+  const lineAllClass = cn(
+    styles.lineAll,
+    data.length > 8 && styles.lineNotInvis
+  );
+  const linePizzaClass = cn(
+    styles.linePizza,
+    data.length < 8 && data.length > 4 && styles.lineNotInvis
+  );
+  const lineDrinksClass = cn(
+    styles.lineDrinks,
+    data.length < 4 && styles.lineNotInvis
+  );
 
   return (
     <div className={styles.container} id="menu">
@@ -33,19 +46,25 @@ const Menu = () => {
       <div className={styles.navbar}>
         <button onClick={() => dispatch(setFilter(""))} className={styles.btn}>
           Все товары
+          <UnderlineIcon className={lineAllClass}></UnderlineIcon>
         </button>
+
         <button
           onClick={() => dispatch(setFilter("pizza"))}
           className={styles.btn}
         >
           Пиццы
+          <UnderlineIcon className={linePizzaClass}></UnderlineIcon>
         </button>
+
         <button
           onClick={() => dispatch(setFilter("drink"))}
           className={styles.btn}
         >
           Напитки
+          <UnderlineIcon className={lineDrinksClass}></UnderlineIcon>
         </button>
+
         <button className={styles.btn}>
           <Link href="#promo">Акции</Link>
         </button>

@@ -11,6 +11,7 @@ import {
 import { increment, decrement, kick } from "@/features/menu/model/orderSlice";
 import { useState } from "react";
 import Link from "next/link";
+import { LineIcon } from "../icons/LineIcon";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -43,6 +44,10 @@ const Order = () => {
             alt="close button"
           />
         </div>
+        <div className={styles.lineBlock}>
+          <LineIcon className={styles.line}></LineIcon>
+        </div>
+
         <div className={styles.content}>
           <div className={styles.products}>
             {data.map((item) => (
