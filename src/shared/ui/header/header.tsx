@@ -11,6 +11,8 @@ import { selectIsCartNotEmpty } from "@/features/menu/model/selectors";
 import { useAppSelector } from "@/shared/lib/redux";
 import Link from "next/link";
 import { UnderlineIcon } from "../icons/UnderlineIcon";
+import { useInterSection } from "@/shared/lib/useInterSection";
+import { Cart } from "../cart/cart";
 
 interface HeaderProps {
   ismainpage: boolean;
@@ -22,7 +24,6 @@ const poetseone = localFont({
 });
 
 const Header: FC<HeaderProps> = (props): JSX.Element => {
-  const isNotEmpty = useAppSelector(selectIsCartNotEmpty);
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -80,20 +81,7 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
           </div>
         </div>
       </div>
-
-      <div className={styles.cart}>
-        <Link href="/order">
-          <button className={styles.cartIcon}>
-            <Image
-              src="/icons/carticon.svg"
-              width={28}
-              height={33}
-              alt="cart icon"
-            />
-          </button>
-          {isNotEmpty && <div className={styles.cartStatus}></div>}
-        </Link>
-      </div>
+      <Cart></Cart>
       <div className={isOpen ? styles.burgerMenuOpen : styles.burgerMenu}>
         {isOpen ? (
           <div className={styles.menuContainer}>

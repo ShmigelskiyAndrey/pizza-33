@@ -1,0 +1,26 @@
+.cart {
+    width: 150px;
+    text-align: center;
+    position: sticky;
+    top: 50px;
+}
+
+.cartIcon {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    border: none;
+    background-color: #FFF5E8;
+    cursor: pointer;
+}
+
+.cartStatus {
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: #FF9D57;
+    position: relative;
+    top: -70px; 
+    left: 90px;
+    cursor: pointer;
+}
