@@ -25,14 +25,7 @@
     display: flex;
 }
 
-.navbar button{
-    background: none;
-    border: none;
-    color: #1A1009;
-    font-size: 24px;
-    margin-right: 1em;
 
-}
 
 .navbar button:last-child {
     margin-right: 0;
@@ -49,25 +42,15 @@
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    background: none;
+    border: none;
+    color: #1A1009;
+    font-size: 24px;
+    margin-right: 1em;
 }
 
-.lineAll {
-    width: 130px;
-    height: auto;
-    display: none;
-}
-
-.linePizza {
-    width: 90%;
-    display: none;
-}
-
-.lineDrinks {
-    display: none;
-}
-
-.lineNotInvis {
-    display: block;
+.activeBtn {
+    border-bottom: 5px solid #FF9D57;
 }
 
 .onion {

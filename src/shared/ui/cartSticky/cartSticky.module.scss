@@ -1,15 +1,17 @@
 .cart {
-    width: 150px;
+
     text-align: center;
-    position: sticky;
-    top: 50px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 2;
 }
 
 .cartIcon {
     width: 70px;
     height: 70px;
     border-radius: 100px;
-    border: none;
+    border: 1px solid #000;
     background-color: #FFF5E8;
     cursor: pointer;
 }
@@ -19,8 +21,14 @@
     height: 20px;
     border-radius: 100px;
     background-color: #FF9D57;
-    position: relative;
-    top: -70px; 
-    left: 90px;
+    position: absolute;
+    top: 0; 
+    right: 0;
     cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .cart {
+        right: 5px;
+    }
 }

@@ -102,3 +102,20 @@ export const MENU: Product[] = [
     photo: "bottleEstragon.png",
   },
 ];
+
+interface Filter {
+  title: string;
+  filter: string;
+}
+
+export const FILTERS: Filter[] = [
+  { title: "Все товары", filter: "" },
+  {
+    title: "Пиццы",
+    filter: "pizza",
+  },
+  {
+    title: "Напитки",
+    filter: "drink",
+  },
+];

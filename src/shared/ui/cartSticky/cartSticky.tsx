@@ -7,7 +7,13 @@ import { useInterSection } from "@/shared/lib/useInterSection";
 
 const CartSticky = () => {
   const isNotEmpty = useAppSelector(selectIsCartNotEmpty);
-  useInterSection("#cart", { rootMargin: "0px", threshold: 1 });
+  const isVisible = useInterSection("#cart", {
+    rootMargin: "0px",
+    threshold: 0,
+  });
+  if (isVisible) {
+    return null;
+  }
   return (
     <div className={styles.cart}>
       <Link href="/order">

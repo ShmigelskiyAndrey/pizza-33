@@ -141,6 +141,16 @@
 }
 
 @media (max-width: 800px) {
+    .counter button {
+        font-size: 16px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .count {
+        font-size: 16px;
+    }
+
     .pizzaImage {
         width: 112px;
         height: 112px;

@@ -5,7 +5,7 @@ import { Card } from "../../shared/ui/card/card";
 import { useAppDispatch, useAppSelector } from "@/shared/lib/redux";
 import { adder, devide, pizza } from "./model/menuSlice";
 import { add, decrement, increment } from "./model/orderSlice";
-import { selectMenuItemsByFilter } from "./model/selectors";
+import { selectFilter, selectMenuItemsByFilter } from "./model/selectors";
 import { filterReducer, setFilter } from "./model/filterSlice";
 import { Shantell_Sans } from "next/font/google";
 import { cn } from "@/shared/lib/classNames";
@@ -16,6 +16,7 @@ import { EggplantIcon } from "@/shared/ui/icons/EggplantIcon";
 import { OnionIcon } from "@/shared/ui/icons/OnionIcon";
 import Link from "next/link";
 import { UnderlineIcon } from "@/shared/ui/icons/UnderlineIcon";
+import { FILTERS } from "./constants";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -25,45 +26,30 @@ const shantellSans = Shantell_Sans({
 const Menu = () => {
   const titleClass = cn(shantellSans.className, styles.title);
   const data = useAppSelector(selectMenuItemsByFilter);
+  const activeFilter = useAppSelector(selectFilter);
   const dispatch = useAppDispatch();
-  const lineAllClass = cn(
-    styles.lineAll,
-    data.length > 8 && styles.lineNotInvis
-  );
-  const linePizzaClass = cn(
-    styles.linePizza,
-    data.length < 8 && data.length > 4 && styles.lineNotInvis
-  );
-  const lineDrinksClass = cn(
-    styles.lineDrinks,
-    data.length < 4 && styles.lineNotInvis
-  );
 
   return (
     <div className={styles.container} id="menu">
       <p className={titleClass}>Меню</p>
 
       <div className={styles.navbar}>
-        <button onClick={() => dispatch(setFilter(""))} className={styles.btn}>
-          Все товары
-          <UnderlineIcon className={lineAllClass}></UnderlineIcon>
-        </button>
-
-        <button
-          onClick={() => dispatch(setFilter("pizza"))}
-          className={styles.btn}
-        >
-          Пиццы
-          <UnderlineIcon className={linePizzaClass}></UnderlineIcon>
-        </button>
-
-        <button
-          onClick={() => dispatch(setFilter("drink"))}
-          className={styles.btn}
-        >
-          Напитки
-          <UnderlineIcon className={lineDrinksClass}></UnderlineIcon>
-        </button>
+        {FILTERS.map((el, index) => {
+          console.log(el.filter, activeFilter);
+          const clasess = cn(
+            styles.btn,
+            el.filter === activeFilter && styles.activeBtn
+          );
+          return (
+            <button
+              onClick={() => dispatch(setFilter(el.filter))}
+              className={clasess}
+              key={index}
+            >
+              {el.title}
+            </button>
+          );
+        })}
 
         <button className={styles.btn}>
           <Link href="#promo">Акции</Link>

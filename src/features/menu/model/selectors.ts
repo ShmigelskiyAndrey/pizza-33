@@ -54,4 +54,5 @@ export {
   selectTotalPrice,
   selectCountById,
   selectChosenProduct,
+  selectFilter,
 };
