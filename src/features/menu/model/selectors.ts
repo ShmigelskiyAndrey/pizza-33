@@ -14,24 +14,24 @@ const selectMenuItemsByFilter = createSelector(
   selectFilter,
   (menu, filter) => {
     if (filter) {
-      return menu.filter((element) => element.category === filter);
+      return menu.data?.filter((element) => element.category === filter);
     }
-    return menu;
+    return menu.data;
   }
 );
 
-const selectCartObject = (state: RootState) => state.orderReducer.cart;
+const selectCartObject = (state: RootState) => state.persistedReducer.cart;
 
 const selectOrderedProducts = createSelector(selectCartObject, (cartObject) => {
   return Object.values(cartObject);
 });
 
 const selectIsCartNotEmpty = (state: RootState) => {
-  return Object.values(state.orderReducer.cart).length > 0;
+  return Object.values(state.persistedReducer.cart).length > 0;
 };
 
 const selectTotalPrice = (state: RootState) => {
-  return Object.values(state.orderReducer.cart).reduce(
+  return Object.values(state.persistedReducer.cart).reduce(
     (accumulator, item) =>
       accumulator +
       item.price * (typeof item.count !== "undefined" ? item.count : 1),
@@ -40,11 +40,11 @@ const selectTotalPrice = (state: RootState) => {
 };
 
 const selectCountById = (id: number) => (state: RootState) => {
-  return state.orderReducer.cart[id]?.count;
+  return state.persistedReducer.cart[id]?.count;
 };
 
-const selectChosenProduct = (id: number) => (state: RootState) => {
-  return state.menuReducer.find((item) => item.id === id);
+const selectChosenProduct = (state: RootState) => {
+  return state.productReducer.data;
 };
 
 export {

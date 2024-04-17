@@ -13,6 +13,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import { storage } from "./storage";
+import { productReducer } from "@/features/menu/model/productSlice";
 
 const persistConfig = {
   key: "root",
@@ -20,17 +21,18 @@ const persistConfig = {
   storage,
 };
 
+const persistedReducer = persistReducer(persistConfig, orderReducer);
+
 const rootReducer = combineReducers({
   menuReducer,
   filterReducer,
-  orderReducer,
+  persistedReducer,
+  productReducer,
 });
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const makeStore = () => {
   return configureStore({
-    reducer: persistedReducer,
+    reducer: rootReducer,
     devTools: process.env.NODE_ENV === "development",
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({

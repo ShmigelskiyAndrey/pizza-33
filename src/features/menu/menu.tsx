@@ -3,7 +3,6 @@
 import styles from "./menu.module.scss";
 import { Card } from "../../shared/ui/card/card";
 import { useAppDispatch, useAppSelector } from "@/shared/lib/redux";
-import { adder, devide, pizza } from "./model/menuSlice";
 import { add, decrement, increment } from "./model/orderSlice";
 import { selectFilter, selectMenuItemsByFilter } from "./model/selectors";
 import { filterReducer, setFilter } from "./model/filterSlice";
@@ -28,6 +27,7 @@ const Menu = () => {
   const data = useAppSelector(selectMenuItemsByFilter);
   const activeFilter = useAppSelector(selectFilter);
   const dispatch = useAppDispatch();
+  console.log(data);
 
   return (
     <div className={styles.container} id="menu">
@@ -35,7 +35,6 @@ const Menu = () => {
 
       <div className={styles.navbar}>
         {FILTERS.map((el, index) => {
-          console.log(el.filter, activeFilter);
           const clasess = cn(
             styles.btn,
             el.filter === activeFilter && styles.activeBtn
@@ -57,7 +56,7 @@ const Menu = () => {
       </div>
 
       <div className={styles.cards}>
-        {data.map((item) => (
+        {data?.map((item) => (
           <Card
             id={item.id}
             key={item.photo}

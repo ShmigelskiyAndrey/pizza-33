@@ -12,6 +12,8 @@ import { useParams } from "next/navigation";
 import { add } from "@/features/menu/model/orderSlice";
 import Link from "next/link";
 import { CurvedLineIcon } from "../icons/CurvedLine";
+import { useEffect } from "react";
+import { fetchProductById } from "@/features/menu/model/productSlice";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -21,8 +23,11 @@ const shantellSans = Shantell_Sans({
 const Product = () => {
   const titleClass = cn(shantellSans.className, styles.title);
   const { id } = useParams<{ id: string }>();
-  const selectedItem = useAppSelector(selectChosenProduct(Number(id)));
+  const selectedItem = useAppSelector(selectChosenProduct);
   const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(fetchProductById(id));
+  }, [dispatch, id]);
   return (
     <>
       <Header ismainpage={false} isMainPageSelected={true}></Header>
