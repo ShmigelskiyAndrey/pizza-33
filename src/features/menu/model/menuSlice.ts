@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { MENU } from "../constants";
 import { fetchProductsApi } from "@/shared/api/productApi";
 import { Product } from "@/shared/types/types";
 

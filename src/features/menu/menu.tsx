@@ -27,7 +27,6 @@ const Menu = () => {
   const data = useAppSelector(selectMenuItemsByFilter);
   const activeFilter = useAppSelector(selectFilter);
   const dispatch = useAppDispatch();
-  console.log(data);
 
   return (
     <div className={styles.container} id="menu">

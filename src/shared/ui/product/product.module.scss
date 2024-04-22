@@ -6,6 +6,7 @@
     justify-content: space-around;
     align-items: flex-end;
     margin-bottom: 50px;
+    background-color: #FAF9F4;
 }
 
 .product {
@@ -18,10 +19,12 @@
     font-size: 64px;
     margin-bottom: 50px;
     min-width: 585px;
+    color: #1A1009;
 }
 
 .description {
     background-color: #FFF5E8;
+    color: #1A1009;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     max-width: 700px;

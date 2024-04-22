@@ -36,13 +36,15 @@ const Order = () => {
             <Link href="/">Вернуться на главную</Link>
           </button>
 
-          <Image
-            className={styles.closeicon}
-            src="/icons/closebutton.svg"
-            width={26}
-            height={26}
-            alt="close button"
-          />
+          <Link href="/">
+            <Image
+              className={styles.closeicon}
+              src="/icons/closebutton.svg"
+              width={26}
+              height={26}
+              alt="close button"
+            />
+          </Link>
         </div>
         <div className={styles.lineBlock}>
           <LineIcon className={styles.line}></LineIcon>
