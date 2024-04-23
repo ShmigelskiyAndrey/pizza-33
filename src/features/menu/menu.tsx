@@ -33,7 +33,6 @@ const Menu = () => {
   const activeFilter = useAppSelector(selectFilter);
   const isLoading = useAppSelector(selectMenuIsLoading);
   const dispatch = useAppDispatch();
-  console.log(data);
 
   if (isLoading) {
     return <Spinner></Spinner>;
