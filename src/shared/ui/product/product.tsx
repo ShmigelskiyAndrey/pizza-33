@@ -6,7 +6,10 @@ import { Shantell_Sans } from "next/font/google";
 import { TomatoIcon } from "../icons/TomatoIcon";
 import { OnionIcon } from "../icons/OnionIcon";
 import { CarrotIcon } from "../icons/CarrotIcon";
-import { selectChosenProduct } from "@/features/menu/model/selectors";
+import {
+  selectChosenProduct,
+  selectProductIsLoading,
+} from "@/features/menu/model/selectors";
 import { useAppDispatch, useAppSelector } from "@/shared/lib/redux";
 import { useParams } from "next/navigation";
 import { add } from "@/features/menu/model/orderSlice";
@@ -14,6 +17,7 @@ import Link from "next/link";
 import { CurvedLineIcon } from "../icons/CurvedLine";
 import { useEffect } from "react";
 import { fetchProductById } from "@/features/menu/model/productSlice";
+import { Spinner } from "../spinner/spinner";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -24,10 +28,16 @@ const Product = () => {
   const titleClass = cn(shantellSans.className, styles.title);
   const { id } = useParams<{ id: string }>();
   const selectedItem = useAppSelector(selectChosenProduct);
+  const isLoading = useAppSelector(selectProductIsLoading);
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchProductById(id));
   }, [dispatch, id]);
+
+  if (isLoading) {
+    return <Spinner></Spinner>;
+  }
+
   return (
     <>
       <Header ismainpage={false} isMainPageSelected={true}></Header>
@@ -35,13 +45,15 @@ const Product = () => {
         <div className={styles.product}>
           <div className={titleClass}>{selectedItem?.title}</div>
           <CurvedLineIcon className={styles.line}></CurvedLineIcon>
-          <Image
-            className={styles.image}
-            src={`/photo/${selectedItem?.photo}`}
-            width={568}
-            height={568}
-            alt="photo of pizza"
-          />
+          {selectedItem?.photo && (
+            <Image
+              className={styles.image}
+              src={`/photo/${selectedItem.photo}`}
+              width={568}
+              height={568}
+              alt="photo of pizza"
+            />
+          )}
         </div>
         <div className={styles.description}>
           <div className={styles.composition}>{selectedItem?.description}</div>

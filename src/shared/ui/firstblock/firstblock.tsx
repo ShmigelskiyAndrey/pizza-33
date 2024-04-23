@@ -3,6 +3,7 @@ import { Header } from "../header/header";
 import { cn } from "@/shared/lib/classNames";
 import localFont from "next/font/local";
 import Link from "next/link";
+import { Spinner } from "../spinner/spinner";
 
 const poetseone = localFont({
   src: "../../../../public/fonts/PoetsenOne-Regular.otf",

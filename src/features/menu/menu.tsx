@@ -4,7 +4,11 @@ import styles from "./menu.module.scss";
 import { Card } from "../../shared/ui/card/card";
 import { useAppDispatch, useAppSelector } from "@/shared/lib/redux";
 import { add, decrement, increment } from "./model/orderSlice";
-import { selectFilter, selectMenuItemsByFilter } from "./model/selectors";
+import {
+  selectFilter,
+  selectMenuItemsByFilter,
+  selectMenuIsLoading,
+} from "./model/selectors";
 import { filterReducer, setFilter } from "./model/filterSlice";
 import { Shantell_Sans } from "next/font/google";
 import { cn } from "@/shared/lib/classNames";
@@ -16,6 +20,7 @@ import { OnionIcon } from "@/shared/ui/icons/OnionIcon";
 import Link from "next/link";
 import { UnderlineIcon } from "@/shared/ui/icons/UnderlineIcon";
 import { FILTERS } from "./constants";
+import { Spinner } from "@/shared/ui/spinner/spinner";
 
 const shantellSans = Shantell_Sans({
   weight: "400",
@@ -26,7 +31,13 @@ const Menu = () => {
   const titleClass = cn(shantellSans.className, styles.title);
   const data = useAppSelector(selectMenuItemsByFilter);
   const activeFilter = useAppSelector(selectFilter);
+  const isLoading = useAppSelector(selectMenuIsLoading);
   const dispatch = useAppDispatch();
+  console.log(data);
+
+  if (isLoading) {
+    return <Spinner></Spinner>;
+  }
 
   return (
     <div className={styles.container} id="menu">

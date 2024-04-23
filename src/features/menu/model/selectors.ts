@@ -47,6 +47,14 @@ const selectChosenProduct = (state: RootState) => {
   return state.productReducer.data;
 };
 
+const selectMenuIsLoading = (state: RootState) => {
+  return state.menuReducer.status === "pending";
+};
+
+const selectProductIsLoading = (state: RootState) => {
+  return state.productReducer.status === "pending";
+};
+
 export {
   selectMenuItemsByFilter,
   selectOrderedProducts,
@@ -55,4 +63,6 @@ export {
   selectCountById,
   selectChosenProduct,
   selectFilter,
+  selectMenuIsLoading,
+  selectProductIsLoading,
 };
