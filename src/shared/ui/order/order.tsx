@@ -135,7 +135,9 @@ const Order = () => {
               ></textarea>
             </div>
             <div className={styles.order}>
-              <button className={styles.orderbtn}>Заказать</button>
+              <Link href="/thankyou" className={styles.orderLink}>
+                <button className={styles.orderbtn}>Заказать</button>
+              </Link>
               <div className={styles.orderdetails}>
                 <div className={styles.totalprice}>
                   <div className={styles.totaltitle}>К оплате: </div>

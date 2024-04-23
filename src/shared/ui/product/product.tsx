@@ -71,7 +71,7 @@ const Product = () => {
             </div>
           </div>
           <div className={styles.price}>{selectedItem?.price} руб</div>
-          <Link href="/#menu">
+          <Link href="/#menu" className={styles.buttonLink}>
             <button
               className={styles.button}
               onClick={() => {

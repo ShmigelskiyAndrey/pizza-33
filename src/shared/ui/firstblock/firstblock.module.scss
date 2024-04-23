@@ -4,6 +4,7 @@
     background: url("/photo/firstPhoto.png") no-repeat ;
     background-size: cover;
     padding-left: 6%;
+    padding-right: 6%;
     padding-top: 380px;
 }
 
@@ -39,7 +40,7 @@
         font-size: 24px;
     }
     .button {
-        width: 260px;
+        width: 100%;
         font-size: 24px;
         height: 60px;
     }
